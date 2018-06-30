@@ -26,3 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.baseSizeBTNContainer{
+  height: 3rem;
+  width: 100%;
+ display: flex;
+ justify-content: center;
+ flex-direction: row;
+}
