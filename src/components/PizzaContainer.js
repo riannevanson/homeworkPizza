@@ -3,12 +3,19 @@ import { connect } from "react-redux";
 
 
 class PizzaContainer extends React.PureComponent {
+
+  state = { value: ''}
+handleChange(event){
+  this.setState({value: event.target.value})
+}
+
   componentDidMount() {}
 
   render() {
+
     return (
       <div>
-        'hi Pizza'
+        Descide on what pizza you want
       </div>
     );
   }
