@@ -24,7 +24,7 @@ class App extends Component {
           <PizzaBase />
           <PizzaSauce />
           <PizzaToppings />
-          <PizzaToppingsPoging2 />
+          {/* <PizzaToppingsPoging2 /> */}
           <PizzaTotalPrice /><br /><br /><br /><br />
 
 

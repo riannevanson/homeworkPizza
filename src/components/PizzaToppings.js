@@ -33,6 +33,7 @@ class PizzaToppings extends React.PureComponent {
       pineapple
     } = this.props;
 
+
     return (
       <form onSubmit={this.handleSubmit}>
         {this.props.pizzaToppings.map(topping => {
@@ -59,7 +60,8 @@ class PizzaToppings extends React.PureComponent {
           );
         })}
 
-        <b>Toppings:</b>
+        <b>Your chosen toppings:</b>
+
         {Object.keys(this.state).map(topping => {
           if (this.state[topping]) {
             // Object.entries(this.props.pizzaToppings).forEach(
@@ -68,7 +70,9 @@ class PizzaToppings extends React.PureComponent {
 
             return <div> {topping} </div>;
           }
-        })}
+        })} for &euro; 1.5
+
+
 
         <br />
         <hr />

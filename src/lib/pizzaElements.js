@@ -60,31 +60,31 @@ export const pizzaToppings = [
   {
     id: 2,
     name: "Corn",
-    price: 0.6
+    price: 0.5
   },
   {
     id: 3,
     name: "Olives(green)",
-    price: 0.7
+    price: 0.5
   },
   {
     id: 4,
     name: "Red union",
-    price: 0.8
+    price: 0.5
   },
   {
     id: 5,
     name: "Spinach",
-    price: 0.1
+    price: 0.5
   },
   {
     id: 6,
     name: "Cherry tomatoes",
-    price: 0.2
+    price: 0.5
   },
   {
     id: 7,
     name: "Chicken",
-    price: 0.3
+    price: 0.5
   }
 ];
