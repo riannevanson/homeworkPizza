@@ -31,20 +31,20 @@ export const pizzaBase = [
 export const pizzaSauce = [
   {
     id: 1,
-    sauce: "White sauce"
+    name: "White sauce"
   },
   {
     id: 2,
-    sauce: "Red sauce"
+    name: "Red sauce"
   },
   {
     id: 3,
-    sauce: "Double red sauce",
+    name: "Double red sauce",
     price: 1
   },
   {
     id: 4,
-    sauce: "Mix it up",
+    name: "Mix it up",
     price: 1.5
   }
 ];
@@ -52,37 +52,37 @@ export const pizzaSauce = [
 export const pizzaToppings = [
   {
     id: 1,
-    topping: "Pineapple",
+    name: "Pineapple",
     price: 0.5
   },
   {
     id: 2,
-    topping: "Corn",
+    name: "Corn",
     price: 0.5
   },
   {
     id: 3,
-    topping: "Olives(green)",
+    name: "Olives(green)",
     price: 0.5
   },
   {
     id: 4,
-    topping: "Red union",
+    name: "Red union",
     price: 0.5
   },
   {
     id: 5,
-    topping: "Spinach",
+    name: "Spinach",
     price: 0.5
   },
   {
     id: 6,
-    topping: "Cherry tomatoes",
+    name: "Cherry tomatoes",
     price: 0.5
   },
   {
     id: 7,
-    topping: "Chicken",
+    name: "Chicken",
     price: 0.5
   }
 ];
