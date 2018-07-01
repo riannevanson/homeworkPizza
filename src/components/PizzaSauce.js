@@ -22,7 +22,7 @@ class PizzaSauce extends React.PureComponent {
         {this.props.pizzaSauce.map(sauce => {
           return (
             <div className="sauceSizeBTNContainer">
-              <label htmlFor="hasSizeValue">I want {sauce.name} {sauce.price > 0 ? '( € '+sauce.price+')':''}</label>
+              <label htmlFor="hasSizeValue">{sauce.name} {sauce.price > 0 ? '( € '+sauce.price+')':''}</label>
               <div>
                 <Field
                   name="test"
@@ -41,7 +41,9 @@ class PizzaSauce extends React.PureComponent {
           );
         })}
 
-        You choose: {this.state.value.name} sauce
+        <b>You choose: {this.state.value.name} sauce</b>
+
+        <br /><hr />
       </form>
 
     );
@@ -57,19 +59,8 @@ PizzaSauce = reduxForm({
   form: "selectingFormValues" // a unique identifier for this form
 })(PizzaSauce);
 
-const selector = formValueSelector("PizzaSauce"); // <-- same as form name
-PizzaSauce = connect(state => {
-  const sauceSizeValue = selector(state, "sauceSize");
-
-  return {
-    sauceSizeValue
-  };
-})(PizzaSauce);
-
 export default connect(mapStateToProps, {
   Field,
   reduxForm,
   formValueSelector
 })(PizzaSauce);
-
-// JSON.parse('{"id":4,"size":35,"style":"NY Style","price":13.49}')

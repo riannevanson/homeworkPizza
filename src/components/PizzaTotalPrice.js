@@ -8,7 +8,7 @@ class PizzaTotalPrice extends React.PureComponent {
   render() {
     return (
       <div>
-       Total price
+       <b>Total price</b>
       </div>
     );
   }

@@ -40,10 +40,9 @@ class PizzaBase extends React.PureComponent {
             </div>
           );
         })}
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
-        You choose: {this.state.value.size} cm
+
+        <b>You choose: {this.state.value.size} cm</b>
+        <br /><hr />
       </form>
 
     );
@@ -59,19 +58,8 @@ PizzaBase = reduxForm({
   form: "selectingFormValues" // a unique identifier for this form
 })(PizzaBase);
 
-const selector = formValueSelector("pizzaBase"); // <-- same as form name
-PizzaBase = connect(state => {
-  const baseSizeValue = selector(state, "baseSize");
-
-  return {
-    baseSizeValue
-  };
-})(PizzaBase);
-
 export default connect(mapStateToProps, {
   Field,
   reduxForm,
   formValueSelector
 })(PizzaBase);
-
-// JSON.parse('{"id":4,"size":35,"style":"NY Style","price":13.49}')
