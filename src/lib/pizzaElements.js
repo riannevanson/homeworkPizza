@@ -31,11 +31,13 @@ export const pizzaBase = [
 export const pizzaSauce = [
   {
     id: 1,
-    name: "White sauce"
+    name: "White sauce",
+    price: 0
   },
   {
     id: 2,
-    name: "Red sauce"
+    name: "Red sauce",
+    price: 0
   },
   {
     id: 3,
