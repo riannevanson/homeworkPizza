@@ -41,7 +41,7 @@ class PizzaSauce extends React.PureComponent {
           );
         })}
 
-        <b>You choose: {this.state.value.name} sauce</b>
+        <b>You choose: {this.state.value.name} sauce for &euro; {this.state.value.price}</b>
 
         <br /><hr />
       </form>

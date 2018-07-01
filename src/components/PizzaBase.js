@@ -41,7 +41,7 @@ class PizzaBase extends React.PureComponent {
           );
         })}
 
-        <b>You choose: {this.state.value.size} cm</b>
+        <b>You choose: {this.state.value.size} cm for &euro; {this.state.value.price}</b>
         <br /><hr />
       </form>
 
@@ -50,7 +50,8 @@ class PizzaBase extends React.PureComponent {
 }
 const mapStateToProps = function(state) {
   return {
-    pizzaBase: state.pizzaBase
+    pizzaBase: state.pizzaBase,
+
   };
 };
 

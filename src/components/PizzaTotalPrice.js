@@ -6,6 +6,7 @@ class PizzaTotalPrice extends React.PureComponent {
   componentDidMount() {}
 
   render() {
+    console.log(this.state)
     return (
       <div>
        <b>Total price</b>

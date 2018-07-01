@@ -24,6 +24,8 @@ class App extends Component {
           <PizzaSauce />
           <PizzaToppings />
           <PizzaTotalPrice /><br /><br /><br /><br />
+
+
           <ResultPage />
         </div>
 

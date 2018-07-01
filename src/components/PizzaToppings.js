@@ -5,7 +5,7 @@ import { Field, reduxForm, formValueSelector } from "redux-form";
 class PizzaToppings extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {};
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -15,13 +15,12 @@ class PizzaToppings extends React.PureComponent {
   // }
 
   handleChange(event) {
-      const value = event.target.checked;
-      const name = event.target.name;
+    const value = event.target.checked;
+    const name = event.target.name;
 
-      this.setState( {
-        [name]: value
-      });
-      
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
@@ -33,7 +32,6 @@ class PizzaToppings extends React.PureComponent {
       hasPineapple,
       pineapple
     } = this.props;
-
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -61,28 +59,16 @@ class PizzaToppings extends React.PureComponent {
           );
         })}
 
-{console.log(Object.keys(this.state))}
-<b>Toppings:</b>
-  {Object.keys(this.state).map(topping => {
-    if (this.state[topping])
-      return(<div> {topping}</div>  );
-  }
+        <b>Toppings:</b>
+        {Object.keys(this.state).map(topping => {
+          if (this.state[topping]) {
+            // Object.entries(this.props.pizzaToppings).forEach(
+            //     ([key, value]) => value.name === topping? console.log(topping, value.price) :''
+            // );
 
-)}
-
-        {/* name: "Pineapple",
-        name: "Corn",
-        name: "Olives(green)",
-        name: "Red union",
-        name: "Spinach",
-        name: "Cherry tomatoes",
-        name: "Chicken",
-        <b>Prijs toppings: {this.state.Pineapple === true ? 'Pineapple' : 'geenpineapple'} </b>
-        <b>Prijs toppings: {this.state.Corn === true ? 'Pineapple' : 'geenpineapple'} </b>
-        <b>Prijs toppings: {this.state.Pineapple === true ? 'Pineapple' : 'geenpineapple'} </b>
-        <b>Prijs toppings: {this.state.Pineapple === true ? 'Pineapple' : 'geenpineapple'} </b> */}
-        {/* <b>Prijs toppings: {this.state.Pineapple === true ? 'Pineapple' : 'geenpineapple'} </b>
-        <b>Prijs toppings: {this.state.Pineapple === true ? 'Pineapple' : 'geenpineapple'} </b> */}
+            return <div> {topping} </div>;
+          }
+        })}
 
         <br />
         <hr />
@@ -98,12 +84,6 @@ const mapStateToProps = function(state) {
 PizzaToppings = reduxForm({
   form: "selectingFormValues" // a unique identifier for this form
 })(PizzaToppings);
-
-// const selector = formValueSelector("PizzaToppings");
-// PizzaToppings = connect(state => {
-//   const hasPineapple = selector(this.state, "Pineapple");
-//   return {hasPineapple}
-// })(PizzaToppings);
 
 export default connect(mapStateToProps, {
   Field,
