@@ -1,37 +1,22 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm, formValueSelector } from "redux-form";
+import { addTopping } from "../actions/pizzaGenerator"
 
 class PizzaToppings extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
 
-    this.handleChange = this.handleChange.bind(this);
-  }
   //
   // handleChange(event) {
   //   this.setState({ value: event.target.checked });
   // }
+toppingClick = (topping) => {
+console.log(this.props.topping)
+}
 
-  handleChange(event) {
-    const value = event.target.checked;
-    const name = event.target.name;
 
-    this.setState({
-      [name]: value
-    });
-  }
+
 
   render() {
-    const {
-      pristine,
-      reset,
-      submitting,
-      toppingSizeValue,
-      hasPineapple,
-      pineapple
-    } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -43,32 +28,51 @@ class PizzaToppings extends React.PureComponent {
                 {topping.price > 0 ? "( € " + topping.price + ")" : ""}
               </label>
               <div>
-                <Field
+                <button
                   name={topping.name}
                   id={topping.name}
                   key={topping.id}
-                  value={JSON.stringify(topping)}
+                  value={topping}
                   component="input"
-                  type="checkbox"
+                  type="button"
                   className="toppingSizecheckbox"
                   onChange={this.handleChange}
-                />
+                  onClick={this.toppingClick}>
+                  {topping.name}
+                </button>
               </div>{" "}
               <br />
             </div>
           );
         })}
 
-        <b>Toppings:</b>
-        {Object.keys(this.state).map(topping => {
-          if (this.state[topping]) {
-            // Object.entries(this.props.pizzaToppings).forEach(
-            //     ([key, value]) => value.name === topping? console.log(topping, value.price) :''
-            // );
-
-            return <div> {topping} </div>;
-          }
+        {this.props.newTopping.map(topping => {
+          return (
+            <div className="baseSizeBTNContainer">
+              <label htmlFor="hasPineapple">
+                {topping.name}{" "}
+                {topping.price > 0 ? "( € " + topping.price + ")" : ""}
+              </label>
+              <div>
+                <button
+                  name={topping.name}
+                  id={topping.name}
+                  key={topping.id}
+                  value={JSON.stringify(topping)}
+                  component="input"
+                  type="button"
+                  className="toppingSizecheckbox"
+                  onChange={this.handleChange}
+                  onClick={this.toppingClick}>
+                  {topping.name}
+                </button>
+              </div>{" "}
+              <br />
+            </div>
+          );
         })}
+
+
 
         <br />
         <hr />
@@ -78,7 +82,8 @@ class PizzaToppings extends React.PureComponent {
 }
 const mapStateToProps = function(state) {
   return {
-    pizzaToppings: state.pizzaToppings
+    pizzaToppings: state.pizzaToppings,
+       newTopping: state.addToppings
   };
 };
 PizzaToppings = reduxForm({
@@ -88,5 +93,5 @@ PizzaToppings = reduxForm({
 export default connect(mapStateToProps, {
   Field,
   reduxForm,
-  formValueSelector
+  formValueSelector, addTopping
 })(PizzaToppings);

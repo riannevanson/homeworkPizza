@@ -18,7 +18,13 @@ class ResultPage extends React.PureComponent {
     );
   }
 }
-export default reduxForm({
-   form: 'PizzaBase',
-   destroyOnUnmount: false
-})(ResultPage)
+
+
+
+
+const mapStateToProps = state => {
+  return { addTopping: state.addTopping }
+}
+
+
+export default connect(mapStateToProps,{})(ResultPage);

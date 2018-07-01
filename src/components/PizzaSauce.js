@@ -21,7 +21,7 @@ class PizzaSauce extends React.PureComponent {
       <form onSubmit={this.handleSubmit}>
         {this.props.pizzaSauce.map(sauce => {
           return (
-            <div className="sauceSizeBTNContainer">
+            <div className="baseSizeBTNContainer">
               <label htmlFor="hasSizeValue">{sauce.name} {sauce.price > 0 ? '( € '+sauce.price+')':''}</label>
               <div>
                 <Field

@@ -7,6 +7,7 @@ import PizzaContainer  from './components/PizzaContainer'
 import PizzaBase  from './components/PizzaBase'
 import PizzaSauce  from './components/PizzaSauce'
 import PizzaToppings  from './components/PizzaToppings'
+import PizzaToppingsPoging2  from './components/PizzaToppingsPoging2'
 import PizzaTotalPrice  from './components/PizzaTotalPrice'
 import ResultPage  from './components/ResultPage'
 import { Link } from "react-router-dom"
@@ -23,6 +24,7 @@ class App extends Component {
           <PizzaBase />
           <PizzaSauce />
           <PizzaToppings />
+          <PizzaToppingsPoging2 />
           <PizzaTotalPrice /><br /><br /><br /><br />
 
 
